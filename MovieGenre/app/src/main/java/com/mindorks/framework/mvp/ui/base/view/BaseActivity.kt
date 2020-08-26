@@ -1,0 +1,37 @@
+package com.mindorks.framework.mvp.ui.base.view
+
+import android.app.ProgressDialog
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.mindorks.framework.mvp.util.CommonUtil
+import dagger.android.AndroidInjection
+
+/**
+ * Created by jyotidubey on 04/01/18.
+ */
+abstract class BaseActivity : AppCompatActivity(), MVPView, BaseFragment.CallBack {
+
+    private var progressDialog: ProgressDialog? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        performDI()
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun hideProgress() {
+        progressDialog?.let { if (it.isShowing) it.cancel() }
+    }
+
+    override fun showMessageToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun showProgress() {
+        hideProgress()
+        progressDialog = CommonUtil.showLoadingDialog(this)
+    }
+
+    private fun performDI() = AndroidInjection.inject(this)
+
+}

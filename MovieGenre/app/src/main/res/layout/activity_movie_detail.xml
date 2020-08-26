@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_effective"
+        android:orientation="vertical">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/ayp_image_detail_film"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:autoPlay="false"
+            app:showYouTubeButton="true"
+            android:layout_marginStart="@dimen/space_more_than_little"
+            android:layout_marginEnd="@dimen/space_more_than_little"
+            android:layout_marginTop="@dimen/space_more_than_little" />
+
+
+        <TextView
+            android:id="@+id/tv_movie_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_more_than_little"
+            android:layout_marginTop="@dimen/space_little"
+            android:layout_marginBottom="10dp"
+            android:text="Movie"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_big"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@id/v_black_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_movie_detail_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_more_than_little"
+            android:layout_marginTop="@dimen/space_little"
+            android:layout_marginEnd="@dimen/space_more_than_little"
+            android:layout_marginBottom="10dp"
+            android:text="**The animal slavery.**\r\n\r\nI remember when this film was considered for the Oscars race. But some people were saying everything from the film was staged, instead of reality. I was like, "
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/v_black_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_reviews_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_more_than_little"
+            android:layout_marginTop="@dimen/text_small"
+            android:layout_marginBottom="10dp"
+            android:text="Reviews"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_big"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@id/v_black_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_no_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/space_more_than_little"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_no_item_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No reviews yet"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_movies_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_more_than_little"
+            android:layout_marginEnd="@dimen/space_more_than_little"
+            android:layout_marginBottom="@dimen/space_more_than_little"
+            android:visibility="gone"
+            tools:listitem="@layout/item_reviews" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_effective"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_genre_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movie Genre"
+        android:layout_marginStart="@dimen/space_more_than_little"
+        android:layout_marginTop="@dimen/space_more_than_little"
+        android:textStyle="bold|italic"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/v_black_line"
+        android:layout_marginBottom="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movies_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_more_than_little"
+        android:layout_marginEnd="@dimen/space_more_than_little"
+        android:layout_marginBottom="@dimen/space_more_than_little"
+        tools:listitem="@layout/item_movie" />
+
+</LinearLayout>
+
+</layout>

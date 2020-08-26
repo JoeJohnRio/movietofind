@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_little">
+
+        <ImageView
+            android:id="@+id/iv_image_film"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="@dimen/space_little"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/v_black_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_movie_title_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_little"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_kinda_big"
+            tools:textColor="@color/black_effective"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_image_film"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Action" />
+        <TextView
+            android:id="@+id/tv_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_little"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_kinda_big"
+            tools:textColor="@color/black_effective"
+            app:layout_constraintStart_toEndOf="@id/iv_image_film"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_title_name"
+            tools:text="77/10" />
+
+
+        <TextView
+            android:id="@+id/tv_movie_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_little"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_kinda_big"
+            tools:textColor="@color/black_effective"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintStart_toEndOf="@id/iv_image_film"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="In post-industrial Ohio, a Chinese billionaire opens a new factory in the husk of an abandoned General Motors plant, hiring two thousand blue-collar Americans. Early days of hope and optimism give way to setbacks as high-tech China clashes with working-class America." />
+
+        <View
+            android:id="@+id/v_black_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/blue_grey_light"
+            app:layout_constraintTop_toBottomOf="@id/iv_image_film"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
